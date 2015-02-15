@@ -14,5 +14,5 @@ $(document).ready(function() {
 
   // Kick-off a New Game
   // TODO: Pass in a string to represent the difficulty level
-  new Game();
+  new Game("hard");
 });

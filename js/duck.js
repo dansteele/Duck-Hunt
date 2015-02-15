@@ -23,7 +23,6 @@ Duck.prototype.flap = function() {
   var _this = this;
 
   this.flapTimer = setTimeout((function() {
-  console.log("Flap")
     _this.flap();
   }), 300);
 }
@@ -34,7 +33,7 @@ Duck.prototype.draw = function() {
   $(el).show()
   $('#game').append(el)
   this.flap()
-  $(el).animate({ top: randomHeight(), left: 1400 }, 3000, "linear", function() {
+  $(el).animate({ top: randomHeight(), left: 1400 }, this.game.speed, "linear", function() {
     this.remove()
   });
 }

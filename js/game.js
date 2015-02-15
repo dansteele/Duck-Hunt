@@ -9,6 +9,7 @@ function Game(difficulty) {
     this.speed = this.difficulty.easy;
   }
   else {
+    console.log(this.difficulty[difficulty])
     this.speed = this.difficulty[difficulty];
   }
 
@@ -41,7 +42,7 @@ Game.prototype.nextRound = function() {
       // Keep going!
       _this.nextRound();
     }
-  }, this.speed + 2000);
+  }, this.speed);
 
 }
 
