@@ -1,10 +1,42 @@
 body {
+  font-family: 'Orbitron', sans-serif;
   user-select: none;
   user-drag: none;
 }
 
 #actors {
   display: none;
+}
+
+#modal {
+  z-index: 5;
+  position: relative;
+  width: 80%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000000;
+  box-shadow: 3px 3px #18d1a3;
+  color: #FFFFFF;
+  text-align: center;
+  cursor: default;
+}
+
+#modal h1 {
+  font-size: 3.5em;
+  padding-top: 1em;
+}
+
+#modal h2 {
+  font-size: 2.5em;
+  padding-top: 1em;
+  padding-bottom: 3em;
+}
+
+#modal li {
+  font-size: 2em;
+  padding-bottom: 1em;
 }
 
 #game {
@@ -16,7 +48,6 @@ body {
 }
 
 #score {
-  font-family: 'Orbitron', sans-serif;
   z-index: 10;
   position: relative;
   top: 81%;

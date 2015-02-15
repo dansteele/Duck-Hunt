@@ -19,9 +19,9 @@ function Game(difficulty) {
 
 // Maps difficulty to speed at which a Duck traverses the screen in milliseconds.
 Game.prototype.difficulty = {
-  easy: 8000,
-  medium: 4000,
-  hard: 2500
+  EASY: 8000,
+  MEDIUM: 4000,
+  HARD: 2500
 }
 
 // Fire off two new Ducks. After waiting a little while, continue to the next

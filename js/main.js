@@ -1,6 +1,11 @@
 $(document).ready(function() {
   console.log("Welcome to Duck Hunt!");
 
+  //new Game("hard");
+  $('#modal li').click(function(e) {
+    new Game($(this).html())
+  })
+
   // Behaviour for the play again link
   $('#play-again').click(function(e) {
     $("#game-over").toggle();
@@ -11,8 +16,5 @@ $(document).ready(function() {
     $('#crosshair').show()
     $('#crosshair').offset({top: e.pageY-30, left:e.pageX-30})
   })
-
-  // Kick-off a New Game
-  // TODO: Pass in a string to represent the difficulty level
-  new Game("hard");
+  
 });
