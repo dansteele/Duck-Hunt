@@ -11,7 +11,8 @@ $(document).ready(function() {
   // Behaviour for the play again link
   $('#play-again').click(function(e) {
     $("#game-over").toggle();
-    new Game();
+    // new Game();
+    location.reload()
   });
 
   $("#game").mousemove(function(e) {

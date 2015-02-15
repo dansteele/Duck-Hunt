@@ -66,7 +66,7 @@ Game.prototype.nextRound = function() {
 Game.prototype.gameOver = function() {
   $("#points").html(this.score);
   delete this // Doesn't work
-  $("#game-over").toggle();
+  $("#game-over").show(200);
 }
 
 // Add the given number of points to the score, and print the total to the log.
