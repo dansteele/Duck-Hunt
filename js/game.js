@@ -11,6 +11,8 @@ function Game(difficulty) {
     shot.play()
     _this.shotsLeft -= 1
     $($(".ammo")[_this.shotsLeft]).hide()
+    $("#gunshotOverlay").css({'z-index': '10', 'opacity': '0.8'});
+    $("#gunshotOverlay").animate({'z-index': '-10', 'opacity': '0'}, 70);
   })
 
 
