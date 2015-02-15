@@ -3,13 +3,14 @@
 function Game(difficulty) {
   this.lives = 3;
   this.score = 0;
+  addSounds(this)
   var _this = this
-  var shot = new Audio("sounds/shot.mp3");
   this.shotsLeft = 3
   this.concurrentDucksKilled = 0
 
+
   $(document).click(function() {
-    shot.play()
+    _this.shot.play()
     _this.shotsLeft -= 1
     $($(".ammo")[_this.shotsLeft]).hide()
     $("#gunshotOverlay").css({'z-index': '10', 'opacity': '0.8'});
@@ -27,7 +28,19 @@ function Game(difficulty) {
   }
 
   // Kick-off the first wave of Ducks
-  this.nextRound();
+  this.glados.play()
+  setTimeout(function() {
+    _this.nextRound();
+  }, 2500)
+}
+
+function addSounds(g) {
+  g.shot = new Audio("sounds/shot.mp3");
+  g.tripleKill = new Audio("sounds/triple_kill.mp3")
+  g.rampage = new Audio("sounds/rampage.mp3")
+  g.glados = new Audio("sounds/prepare" + (Math.floor(Math.random()*(6-1+1)+1)) + ".mp3")
+  g.godLike = new Audio("sounds/godlike.mp3")
+  g.wicked = new Audio("sounds/wicked.mp3")
 }
 
 // Maps difficulty to speed at which a Duck traverses the screen in milliseconds.

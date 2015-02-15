@@ -10,13 +10,21 @@ function Duck(game) {
     console.log(_this.game.shotsLeft)
     if (_this.game.shotsLeft > 0) {
       _this.die();
-      if (_this.game.concurrentDucksKilled === 2) {
-        // DOUBLE KILL!
+      if (_this.game.concurrentDucksKilled === 3) {
+        _this.game.tripleKill.play()
+      } else if(_this.game.concurrentDucksKilled === 6) {
+        _this.game.rampage.play()
+      } else if (Math.random() > 0.95) {
+        _this.game.godLike.play()
+      } else if (Math.random() > 0.95) {
+        _this.game.wicked.play()
       }
     }
   });
   this.draw();
 }
+
+
 
 function randomHeight() {
   return 400 * Math.random();
