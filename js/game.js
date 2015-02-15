@@ -3,6 +3,12 @@
 function Game(difficulty) {
   this.lives = 10;
   this.score = 0;
+  this.shotsLeft = 3
+  var _this = this
+  $(document).click(function() {
+    _this.shotsLeft -= 1
+  })
+
 
   // Set the difficulty- easy by default
   if(typeof(difficulty) === "undefined") {
@@ -26,10 +32,13 @@ Game.prototype.difficulty = {
 
 // Fire off two new Ducks. After waiting a little while, continue to the next
 // round if we've got more lives, or show the Game Over screen.
+
 Game.prototype.nextRound = function() {
-  var duck = new Duck(this);
-  var duck = new Duck(this);
+  new Duck(this);
+  new Duck(this);
+  this.shotsLeft = 3
   var _this = this;
+
 
   // Do this again in a little while...
   var roundTimer = setTimeout(function() {

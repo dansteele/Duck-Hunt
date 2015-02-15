@@ -7,7 +7,8 @@ function Duck(game) {
 
   var _this = this;
   $(this.el).click(function() {
-    _this.die();
+    console.log(_this.game.shotsLeft)
+    if (_this.game.shotsLeft > 0) _this.die();
   });
 
   this.draw();

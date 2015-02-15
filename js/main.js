@@ -2,8 +2,10 @@ $(document).ready(function() {
   console.log("Welcome to Duck Hunt!");
 
   $('#modal li').click(function(e) {
-    new Game($(this).html())
-    $('#modal').hide()
+    _this = this
+    $('#modal').hide(400, function() {
+    new Game($(_this).html())
+    })
   })
 
   // Behaviour for the play again link
