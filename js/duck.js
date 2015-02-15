@@ -14,7 +14,7 @@ function Duck(game) {
 }
 
 function randomHeight() {
-  return 600 * Math.random();
+  return 400 * Math.random();
 }
 
 
@@ -29,7 +29,7 @@ Duck.prototype.flap = function() {
 
 Duck.prototype.draw = function() {
   el = this.el
-  $(el).offset({top: randomHeight(), left: 30})  
+  $(el).offset({top: randomHeight(), left: -100})  
   $(el).show()
   $('#game').append(el)
   this.flap()
