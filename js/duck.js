@@ -46,7 +46,7 @@ Duck.prototype.draw = function() {
   // Start Flapping...
   this.flap()
   // ... and Fly!
-  $(el).animate({ top: randomHeight(), left: 1400 }, 2000, "linear", function() {
+  $(el).animate({ top: randomHeight(), left: 1400 }, 3000, "linear", function() {
     this.remove()
   });
 }
