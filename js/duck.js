@@ -23,12 +23,12 @@ function randomHeight() {
 // Some animation using a Timeout to make the Duck flap.
 Duck.prototype.flap = function() {
   $(this.el).toggleClass("flap");
-
   // Oh Javascript...
   var _this = this;
 
   // Do this again in 300 milliseconds
   this.flapTimer = setTimeout((function() {
+  console.log("Flap")
     _this.flap();
   }), 300);
 }
@@ -36,12 +36,17 @@ Duck.prototype.flap = function() {
 // TODO: Display the Duck on the screen.
 Duck.prototype.draw = function() {
   // Make the duck appear somewhere random along the page and just off the screen
+  el = this.el
+  $(el).offset({top: randomHeight(), left: 30})  
+  $(el).show()
 
   // Append the element to the DOM, use the #game element
+  $('#game').append(el)
 
   // Start Flapping...
-
+  this.flap()
   // ... and Fly!
+  $(el).offset({ top: 10, left: 600 });
 }
 
 // TODO: I've been shot!
