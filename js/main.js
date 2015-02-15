@@ -1,9 +1,9 @@
 $(document).ready(function() {
   console.log("Welcome to Duck Hunt!");
 
-  //new Game("hard");
   $('#modal li').click(function(e) {
     new Game($(this).html())
+    $('#modal').hide()
   })
 
   // Behaviour for the play again link
