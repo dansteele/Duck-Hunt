@@ -54,5 +54,5 @@ Game.prototype.gameOver = function() {
 // Add the given number of points to the score, and print the total to the log.
 Game.prototype.addScore = function(points) {
   this.score += points;
-  console.log("Score: " + this.score);
+  $('#score').html(this.score);
 }

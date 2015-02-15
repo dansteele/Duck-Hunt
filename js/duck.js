@@ -46,7 +46,9 @@ Duck.prototype.die = function() {
   clearTimeout(this.flapTimer)
   el.stop()
   this.game.addScore(100)
-  el.animate({top: 800, left: el.position.left}, 800, "linear")
+  el.animate({top: 800, left: el.position.left}, 800, "linear", function(){
+    this.remove()
+  })
 }
 
 // I made it to the other side!

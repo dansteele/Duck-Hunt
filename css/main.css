@@ -15,6 +15,15 @@ body {
   cursor: none;
 }
 
+#score {
+z-index: 10;
+position: relative;
+top: 81%;
+left: 75%;
+color: white;
+font-size: 2.5em;
+}
+
 #crosshair {
   display: none;
   position: relative;
