@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   $("#game").mousemove(function(e) {
     $('#crosshair').show()
-    $('#crosshair').offset({top: e.pageX, left:e.pageY})
+    $('#crosshair').offset({top: e.pageY, left:e.pageX})
   })
 
   // Kick-off a New Game
