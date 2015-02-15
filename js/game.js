@@ -3,13 +3,14 @@
 function Game(difficulty) {
   this.lives = 10;
   this.score = 0;
-  this.shotsLeft = 3
   var _this = this
   var shot = new Audio("sounds/shot.mp3");
+  this.shotsLeft = 3
 
   $(document).click(function() {
     shot.play()
     _this.shotsLeft -= 1
+    $($(".ammo")[_this.shotsLeft]).hide()
   })
 
 
@@ -41,7 +42,7 @@ Game.prototype.nextRound = function() {
   new Duck(this);
   this.shotsLeft = 3
   var _this = this;
-
+  $('.ammo').show()
 
   // Do this again in a little while...
   var roundTimer = setTimeout(function() {

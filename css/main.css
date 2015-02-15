@@ -8,6 +8,24 @@ body {
   display: none;
 }
 
+.ammo {
+  position: absolute;
+  background: url(../img/sprites.png);
+  background-position: 460px 56px;
+  top: 684px;
+  left: 114px;
+  width: 13px;
+  height: 41px;
+}
+
+#ammo2 {
+  left: 146px;
+}
+
+#ammo3 {
+  left: 176px;
+}
+
 #modal {
   z-index: 5;
   position: relative;
