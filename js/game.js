@@ -5,7 +5,10 @@ function Game(difficulty) {
   this.score = 0;
   this.shotsLeft = 3
   var _this = this
+  var shot = new Audio("sounds/shot.mp3");
+
   $(document).click(function() {
+    shot.play()
     _this.shotsLeft -= 1
   })
 
