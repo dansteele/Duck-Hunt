@@ -2,15 +2,19 @@
 
 function Duck(game) {
   this.game = game;
+  var _this = this;
   this.el = $("#duck-template").clone();
   this.el.removeAttr("id");
 
-  var _this = this;
   $(this.el).click(function() {
     console.log(_this.game.shotsLeft)
-    if (_this.game.shotsLeft > 0) _this.die();
+    if (_this.game.shotsLeft > 0) {
+      _this.die();
+      if (_this.game.concurrentDucksKilled === 2) {
+        // DOUBLE KILL!
+      }
+    }
   });
-
   this.draw();
 }
 
@@ -34,18 +38,21 @@ Duck.prototype.draw = function() {
   $(el).show()
   $('#game').append(el)
   this.flap()
+  var _this = this;
   $(el).animate({ top: randomHeight(), left: 1400 }, this.game.speed, "linear", function() {
+    _this.game.lives -= 1;
     this.remove()
   });
 }
 
 
 Duck.prototype.die = function() {
-  el = $(this.el)
-  el.addClass("dead")
-  clearTimeout(this.flapTimer)
-  el.stop()
-  this.game.addScore(100)
+  el = $(this.el);
+  el.addClass("dead");
+  clearTimeout(this.flapTimer);
+  el.stop();
+  this.game.concurrentDucksKilled += 1;
+  this.game.addScore(100);
   el.animate({top: 800, left: el.position.left}, 800, "linear", function(){
     this.remove()
   })

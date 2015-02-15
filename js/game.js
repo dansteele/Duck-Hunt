@@ -1,11 +1,12 @@
 // Constructor function for a Game
 
 function Game(difficulty) {
-  this.lives = 10;
+  this.lives = 3;
   this.score = 0;
   var _this = this
   var shot = new Audio("sounds/shot.mp3");
   this.shotsLeft = 3
+  this.concurrentDucksKilled = 0
 
   $(document).click(function() {
     shot.play()
@@ -64,6 +65,7 @@ Game.prototype.nextRound = function() {
 // Show the Game Over modal and insert the player's score.
 Game.prototype.gameOver = function() {
   $("#points").html(this.score);
+  delete this // Doesn't work
   $("#game-over").toggle();
 }
 
